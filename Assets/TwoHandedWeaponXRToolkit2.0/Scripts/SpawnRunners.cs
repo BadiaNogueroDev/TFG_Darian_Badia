@@ -23,7 +23,7 @@ namespace SniperDemo
             if (enemiesInScene.Length < maxEnemies)
             {
                 int random = Random.Range(0, spawnPointList.Count);
-                Instantiate(enemy, spawnPointList[random].position, Quaternion.identity);
+                Instantiate(enemy, spawnPointList[random].position, spawnPointList[random].rotation);
             }
         }
     }

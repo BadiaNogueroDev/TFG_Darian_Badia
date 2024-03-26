@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
+using Random = UnityEngine.Random;
 
 namespace SniperDemo
 {
@@ -27,6 +29,8 @@ namespace SniperDemo
         [SerializeField] private int maxAmmo;
         private int currentAmmo;
         private bool hasAmmo;
+        private bool firstFrameRecharge;
+        private bool firstFrameEmpty;
         
         public void StartFiring()
         {
@@ -36,10 +40,24 @@ namespace SniperDemo
 
         private IEnumerator FiringSequence()
         {
-            while (gameObject.activeSelf)
+            CreateProjectile();
+            yield return new WaitForSeconds(fireWait);
+        }
+
+        private void Update()
+        {
+            if (socket.hasSelection && !firstFrameRecharge)
             {
-                CreateProjectile();
-                yield return new WaitForSeconds(fireWait);
+                Recharge();
+                firstFrameRecharge = true;
+                firstFrameEmpty = false;
+            }
+
+            if (!socket.hasSelection && !firstFrameEmpty)
+            {
+                Empty();
+                firstFrameRecharge = false;
+                firstFrameEmpty = true;
             }
         }
 
@@ -59,11 +77,15 @@ namespace SniperDemo
             currentAmmo--;
             ammoText.text = currentAmmo.ToString();
             if (currentAmmo <= 0) { hasAmmo = false; }
+
+            Manager.instance.data.ShotsFired++;
         }
 
         //Call once when getting socket
         public void Recharge()
         {
+            Manager.instance.data.MagazineChanged++;
+            
             hasAmmo = true;
             currentAmmo = maxAmmo;
             ammoText.text = currentAmmo.ToString();
@@ -84,14 +106,10 @@ namespace SniperDemo
 
         void CasingRelease()
         {
-            //Create the casing
             GameObject tempCasing;
             tempCasing = Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation) as GameObject;
-            //Add force on casing to push it out
             tempCasing.GetComponent<Rigidbody>().AddExplosionForce(Random.Range(ejectPower * 0.7f, ejectPower), (casingExitLocation.position - casingExitLocation.right * 0.3f - casingExitLocation.up * 0.6f), 1f);
-            //Add torque to make casing spin in random direction
             tempCasing.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Random.Range(100f, 500f), Random.Range(100f, 1000f)), ForceMode.Impulse);
-            //Destroy casing after X seconds
             Destroy(tempCasing, destroyTimer);
         }
     }

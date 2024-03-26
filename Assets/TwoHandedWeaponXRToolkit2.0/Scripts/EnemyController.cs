@@ -15,17 +15,16 @@ namespace SniperDemo
         [SerializeField] private Transform shotPoint;
         
         private bool dead;
+        private bool playerInRange;
         private float playerDistance;
         private float playerDistanceToShoot = 5.0f;
-        private float shotTimer;
-        private float shotTimerMax = 3.0f;
         
         void Start()
         {
             dead = false;
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
-            player = GameObject.Find("XR Rig");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         void Update()
@@ -37,37 +36,29 @@ namespace SniperDemo
                 navMeshAgent.SetDestination(player.transform.position);
             }
             
-            if(playerDistance <= playerDistanceToShoot)
+            if(playerDistance <= playerDistanceToShoot && !playerInRange)
             {
+                playerInRange = true;
                 navMeshAgent.isStopped = true;
-                animator.SetTrigger("Stop");
-                shotTimer += Time.deltaTime;
                 transform.LookAt(player.transform);
-                if (shotTimer >= shotTimerMax)
-                {
-                    FireBullet();
-                    shotTimer = 0.0f;
-                }
+                animator.SetTrigger("Stop");
             }
         }
 
-        private void FireBullet()
+        public void FireBullet()
         {
             Projectile projectile = Instantiate(bullet, shotPoint.position, shotPoint.rotation).GetComponent<Projectile>();
-            Vector3 playerDirection = transform.position - player.transform.position;
-            playerDirection.Normalize();
-            projectile.LaunchAtPlayer(playerDirection);
+            projectile.LaunchAtPlayer(Vector3.forward);
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void Die()
         {
-            if (other.gameObject.CompareTag("Bullet"))
-            {
-                dead = true;
-                navMeshAgent.isStopped = true;
-                animator.SetTrigger("Death");
-                Destroy(gameObject, 3.0f);
-            }
+            Manager.instance.data.EnemiesKilled++;
+            
+            dead = true;
+            navMeshAgent.isStopped = true;
+            animator.SetTrigger("Death");
+            Destroy(gameObject, 3.0f);
         }
     }
 }

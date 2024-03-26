@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SniperDemo
@@ -10,6 +11,11 @@ namespace SniperDemo
         public bool explode;
         public GameObject fracturedPieces;
         public GameObject trail;
+
+        private void Start()
+        {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        }
 
         void FixedUpdate()
         {

@@ -10,6 +10,7 @@ namespace SniperDemo
 
         void Start()
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             rb = gameObject.GetComponent<Rigidbody>();
             rb.AddForce(20 * gameObject.transform.forward, ForceMode.Impulse);
         }

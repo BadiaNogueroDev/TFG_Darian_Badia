@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 248737986143953592}
   - component: {fileID: 4041731106359435388}
   - component: {fileID: 7408766781883551778}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946112898438215213}
   - component: {fileID: 8300349586962658902}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,9 +161,9 @@ GameObject:
   - component: {fileID: 1049047199919328679}
   - component: {fileID: 1049047199919328676}
   - component: {fileID: 1049047199919328675}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperRifle
-  m_TagString: Untagged
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,8 +236,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05213864, y: 0.16854596, z: 1.0267353}
-  m_Center: {x: 0.0074851625, y: 0.042481422, z: -0.2234397}
+  m_Size: {x: 0.05, y: 0.16, z: 1}
+  m_Center: {x: 0, y: 0.05, z: -0.2}
 --- !u!82 &1049047199919328676
 AudioSource:
   m_ObjectHideFlags: 0
@@ -415,18 +415,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3175410125852850689}
-        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
-        m_MethodName: CheckDummyMag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3175410125852850717}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -438,6 +426,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3175410125852850689}
+        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
+        m_MethodName: CheckDummyMag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
@@ -551,7 +551,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AttachTransform: {fileID: 1049047199208061647}
-  m_SecondaryAttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 1049047199553928961}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 1352485725487532023}
   - component: {fileID: 3177413137842850919}
   - component: {fileID: 4381241511089616032}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: AmmoInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 3494954118422822893}
   - component: {fileID: 5295604036517235059}
   - component: {fileID: 4358303819908535724}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1124870380297258994}
   - component: {fileID: 27073836728130040}
   - component: {fileID: 6981700980695153682}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,13 +930,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049047199029655629}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6636841, y: -0, z: -0, w: 0.74801296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0166, y: 0.013, z: -0.016}
-  m_LocalScale: {x: 0.063608155, y: 0.078022294, z: 0.19312927}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 649731810857724510}
-  m_LocalEulerAnglesHint: {x: -83.163, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1049047199029655619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -956,7 +956,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 0.15, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1049047199029655618
 Rigidbody:
@@ -1109,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049047199208061647}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Attach Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,7 +1143,6 @@ GameObject:
   - component: {fileID: 1049047199553928963}
   - component: {fileID: 1049047199553928962}
   - component: {fileID: 1049047199553928972}
-  - component: {fileID: 1049047199553928960}
   m_Layer: 0
   m_Name: ---Second Grab Point1---
   m_TagString: Untagged
@@ -1161,7 +1160,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.017, y: 0.062, z: -0.275}
-  m_LocalScale: {x: 0.095844105, y: 0.07145372, z: 0.17687003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 649731810857724510}
@@ -1185,7 +1184,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.1, y: 0.05, z: 0.15}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1049047199553928962
 Rigidbody:
@@ -1329,27 +1328,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &1049047199553928960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049047199553928973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1049047199957984329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1049047199957984328}
   - component: {fileID: 1049047199957984335}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ---Barrel---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1397,7 @@ GameObject:
   - component: {fileID: 7964840633638094372}
   - component: {fileID: 7610698489110303673}
   - component: {fileID: 6033426112576037440}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,7 +1478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356123925863490696}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1543,7 @@ GameObject:
   - component: {fileID: 4607526734766823956}
   - component: {fileID: 8256189548525889729}
   - component: {fileID: 1721632885960254730}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1626,7 @@ GameObject:
   - component: {fileID: 5116290348985418357}
   - component: {fileID: 1031391002867656491}
   - component: {fileID: 2585888028523942805}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1731,7 +1709,7 @@ GameObject:
   - component: {fileID: 5449191529900465831}
   - component: {fileID: 1368167339811332006}
   - component: {fileID: 4814570301476435811}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1814,7 +1792,7 @@ GameObject:
   - component: {fileID: 2423805811194062975}
   - component: {fileID: 7617653532990782750}
   - component: {fileID: 2318926084115130641}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1896,7 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3142364453807571043}
   - component: {fileID: 2364455220927503070}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ---Sniper---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1924,7 @@ GameObject:
   - component: {fileID: 4847949678920129639}
   - component: {fileID: 9145815575994859765}
   - component: {fileID: 2411999640172656648}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2029,7 +2007,7 @@ GameObject:
   - component: {fileID: 1522480507992311154}
   - component: {fileID: 6758529835988620321}
   - component: {fileID: 2944240465236358519}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2090,7 @@ GameObject:
   - component: {fileID: 7011194634993435785}
   - component: {fileID: 5223491086356827515}
   - component: {fileID: 4541277684838764474}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Sphere_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2195,7 +2173,7 @@ GameObject:
   - component: {fileID: 3500262961483201448}
   - component: {fileID: 9075386956126428359}
   - component: {fileID: 6701415549202855341}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2277,7 +2255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175410123917746722}
   - component: {fileID: 3175410123917746749}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Audio Source NoAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2404,7 +2382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3175410124075593534}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: CasingExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2435,7 +2413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3175410124227444226}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2471,7 +2449,7 @@ GameObject:
   - component: {fileID: 3175410124256302208}
   - component: {fileID: 3175410124256302211}
   - component: {fileID: 3175410124256302210}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ScopeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175410124392992116}
   - component: {fileID: 3175410124392992117}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Audio Source Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2700,7 +2678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3175410124492008403}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2736,7 +2714,7 @@ GameObject:
   - component: {fileID: 3175410124551989758}
   - component: {fileID: 3175410124551989756}
   - component: {fileID: 3175410124551989759}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperRenderRawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,7 +2784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3175410124576673022}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SocketAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2968,7 +2946,7 @@ GameObject:
   - component: {fileID: 3175410124795140574}
   - component: {fileID: 3175410124795140569}
   - component: {fileID: 3175410124795140568}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: DummyBarrettRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3051,7 @@ GameObject:
   - component: {fileID: 3175410124825971070}
   - component: {fileID: 3175410124825971065}
   - component: {fileID: 3175410124825971064}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3160,7 +3138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3175410124884359550}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3193,7 +3171,7 @@ GameObject:
   - component: {fileID: 3175410125411212918}
   - component: {fileID: 3175410125411212916}
   - component: {fileID: 3175410125411212919}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperScopeOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3264,7 +3242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3175410125503287782}
   - component: {fileID: 3175410125503287783}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Audio Source Reload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3394,7 +3372,7 @@ GameObject:
   - component: {fileID: 3175410125852850688}
   - component: {fileID: 3175410125852850691}
   - component: {fileID: 3175410125852850689}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ---SocketAttach---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3436,8 +3414,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.124881, y: 0.1614282, z: 0.1386114}
-  m_Center: {x: 0.0022820383, y: 0.00823894, z: -0.004485552}
+  m_Size: {x: 0.12, y: 0.16, z: 0.13}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3175410125852850691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3526,7 +3504,7 @@ GameObject:
   - component: {fileID: 4771588183855172754}
   - component: {fileID: 1592035594982375666}
   - component: {fileID: 89821883511607080}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3609,7 +3587,7 @@ GameObject:
   - component: {fileID: 6863829041148205394}
   - component: {fileID: 5261295342222801702}
   - component: {fileID: 6955833904150394300}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3692,7 +3670,7 @@ GameObject:
   - component: {fileID: 8338679832667365175}
   - component: {fileID: 7710756596238761330}
   - component: {fileID: 413152089539692969}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3775,7 +3753,7 @@ GameObject:
   - component: {fileID: 4305247195988991149}
   - component: {fileID: 429833179454077664}
   - component: {fileID: 8438648378469434496}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3858,7 +3836,7 @@ GameObject:
   - component: {fileID: 2567233605418941261}
   - component: {fileID: 9199079377217570046}
   - component: {fileID: 8015776528924426566}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3939,7 +3917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365211231962751783}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Scope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3979,7 +3957,7 @@ GameObject:
   - component: {fileID: 4373433251926825207}
   - component: {fileID: 5902283625493891866}
   - component: {fileID: 8123823403183682694}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperBulletCasingDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4062,7 +4040,7 @@ GameObject:
   - component: {fileID: 6302972866540862006}
   - component: {fileID: 4278327769024745676}
   - component: {fileID: 8637887575469156987}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4145,7 +4123,7 @@ GameObject:
   - component: {fileID: 4018566591318144736}
   - component: {fileID: 1940684193553152694}
   - component: {fileID: 7903117268717536107}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4228,7 +4206,7 @@ GameObject:
   - component: {fileID: 7134138996507366802}
   - component: {fileID: 3538903159798472977}
   - component: {fileID: 8525981758753209372}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4311,7 +4289,7 @@ GameObject:
   - component: {fileID: 2262708537685341857}
   - component: {fileID: 602395457604678076}
   - component: {fileID: 4282933757670493147}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4394,7 +4372,7 @@ GameObject:
   - component: {fileID: 8482925792130222950}
   - component: {fileID: 7560299494861382166}
   - component: {fileID: 1240319907125182684}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4477,7 +4455,7 @@ GameObject:
   - component: {fileID: 1947886084052915372}
   - component: {fileID: 6490530067570071071}
   - component: {fileID: 4092006163592934645}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4560,7 +4538,7 @@ GameObject:
   - component: {fileID: 2278851145771437782}
   - component: {fileID: 2296162413177792985}
   - component: {fileID: 4720008088599582344}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4643,7 +4621,7 @@ GameObject:
   - component: {fileID: 4926093534723093048}
   - component: {fileID: 8608158625085820248}
   - component: {fileID: 6250987877107858753}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4726,7 +4704,7 @@ GameObject:
   - component: {fileID: 7325847874403746767}
   - component: {fileID: 5107105878764347714}
   - component: {fileID: 847127707184660057}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4809,7 +4787,7 @@ GameObject:
   - component: {fileID: 414216071438335252}
   - component: {fileID: 171371506585031251}
   - component: {fileID: 5836522100172122505}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4892,7 +4870,7 @@ GameObject:
   - component: {fileID: 4424692133343292057}
   - component: {fileID: 182106459933568514}
   - component: {fileID: 6445066922201796537}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4974,7 +4952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5427284691570816911}
   - component: {fileID: 3175410124361475983}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SniperCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5006,7 @@ GameObject:
   - component: {fileID: 1568997158100630770}
   - component: {fileID: 791884610416040692}
   - component: {fileID: 3352080905840740892}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5102,13 +5080,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8494079449535034985}
   - component: {fileID: 4540450263005545591}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8494079449535034985
 Transform:
   m_ObjectHideFlags: 0
@@ -5239,7 +5217,7 @@ GameObject:
   - component: {fileID: 5355705222720117769}
   - component: {fileID: 3305813792464370628}
   - component: {fileID: 96092808679318365}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5322,7 +5300,7 @@ GameObject:
   - component: {fileID: 3657906980557338330}
   - component: {fileID: 2661100115504992414}
   - component: {fileID: 3256506949586637389}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5405,7 +5383,7 @@ GameObject:
   - component: {fileID: 121972761736257821}
   - component: {fileID: 7455719095410893374}
   - component: {fileID: 2689726546363654554}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5488,7 +5466,7 @@ GameObject:
   - component: {fileID: 7479353717707310925}
   - component: {fileID: 6963367822844698960}
   - component: {fileID: 2590214095721921342}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5571,7 +5549,7 @@ GameObject:
   - component: {fileID: 8408418997998884229}
   - component: {fileID: 7559247655793586694}
   - component: {fileID: 6113356260113819161}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5654,7 +5632,7 @@ GameObject:
   - component: {fileID: 3514504215971260810}
   - component: {fileID: 5230292197202310599}
   - component: {fileID: 4449183190856193128}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Circle_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5737,7 +5715,7 @@ GameObject:
   - component: {fileID: 1724489424979026485}
   - component: {fileID: 245863513389368017}
   - component: {fileID: 7075013229907732969}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5820,7 +5798,7 @@ GameObject:
   - component: {fileID: 4571983192137316285}
   - component: {fileID: 8290563421314587903}
   - component: {fileID: 7668094631786027234}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5903,7 +5881,7 @@ GameObject:
   - component: {fileID: 4642580030699201307}
   - component: {fileID: 2612980003739333774}
   - component: {fileID: 5368018455056225696}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5986,7 +5964,7 @@ GameObject:
   - component: {fileID: 2803331864150323006}
   - component: {fileID: 1844892827274481577}
   - component: {fileID: 1639741362019908412}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube_017
   m_TagString: Untagged
   m_Icon: {fileID: 0}

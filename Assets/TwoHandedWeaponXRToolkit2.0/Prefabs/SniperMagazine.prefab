@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7728109755950093633}
   - component: {fileID: 5827542166031487700}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PanelSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 1652143308611070816}
   - component: {fileID: 1733845330183158302}
   - component: {fileID: 3984596719383497486}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7402753633983150061}
   - component: {fileID: 4012675545259255009}
   - component: {fileID: 4825920238229043214}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 7105359478100832460}
   - component: {fileID: 7105359478100832462}
   - component: {fileID: 7105359478100832461}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SniperMagazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.05, y: 0.18, z: 0.2}
+  m_Size: {x: 0.03, y: 0.14, z: 0.16}
   m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!114 &7105359478100832461
 MonoBehaviour:
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 8411527995499397140}
   - component: {fileID: 1027625341620211279}
   - component: {fileID: 1397817570528303028}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ImageSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

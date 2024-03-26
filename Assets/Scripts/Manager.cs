@@ -1,10 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
+using SniperDemo;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+using System.IO;
 
 public class Manager : MonoBehaviour
 {
+    public HealthSystem playerHealth;
+    public EnemyController[] enemies;
+
+    public TMP_InputField playtesterName;
     public HUD_Health hudHealth;
     public HUD_Ammo hudAmmo;
     public HUD_Aim hudAim;
@@ -13,6 +18,8 @@ public class Manager : MonoBehaviour
     
     public int selectedGroup = 0;
     public int selectedSubgroup = 0;
+
+    private string DataFileName = "";
     
     public static Manager instance { get; private set; }
 
@@ -36,16 +43,27 @@ public class Manager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void ResetGame()
+    {
+        enemies = FindObjectsOfType<EnemyController>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            data.EnemiesKilled--;
+            enemies[i].Die();
+        }
+        playerHealth.Revive();
+    }
+
     public void StartPlaytest()
     {
+        DataFileName = Application.dataPath + $"/Data from {playtesterName.text}.csv";
         hudHealth.SetType();
         hudAmmo.SetType();
         hudAim.SetType();
         hudSelection.SetType();
         SetTestSubgroup();
-        Time.timeScale = 1;
-        
         StartCoroutine(FinishPlaytest());
+        Time.timeScale = 1;
     }
 
     public void SetTestGroup(int group)
@@ -75,8 +93,26 @@ public class Manager : MonoBehaviour
     IEnumerator FinishPlaytest()
     {
         yield return new WaitForSeconds(120);
-        //FinishPlaytest
-        //Print data
+        string HUD_Version = selectedGroup.ToString() + "." + selectedSubgroup.ToString();
+        WriteCSV(HUD_Version);
+        Time.timeScale = 0;
         yield return null;
+    }
+
+    public void WriteCSV(string version)
+    {
+        TextWriter tw = new StreamWriter(DataFileName, false);
+        tw.WriteLine("HUD Version, Playtester, Hits received, Magazines changed, Shots fired, Enemies killed, Objects grabbed");
+        tw.Close();
+        
+        tw = new StreamWriter(DataFileName, true);
+        tw.WriteLine(version + "," + 
+                     playtesterName.text + "," + 
+                     data.HitsReceived + "," + 
+                     data.MagazineChanged + "," +
+                     data.ShotsFired + "," + 
+                     data.EnemiesKilled + "," + 
+                     data.ObjectsGrabbed + ",");
+        tw.Close();
     }
 }

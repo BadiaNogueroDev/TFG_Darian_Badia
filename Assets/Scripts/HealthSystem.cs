@@ -18,13 +18,21 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        GetDamage(10);
+        Revive();
     }
 
     public void GetDamage(float damage)
     {
+        Manager.instance.data.HitsReceived++;
+        
         currentHealth -= damage;
-        if (currentHealth <= maxHealth) currentHealth = maxHealth;
+        if (currentHealth <= 0) Manager.instance.ResetGame();
+        UpdateHUD();
+    }
+
+    public void Revive()
+    {
+        currentHealth = maxHealth;
         UpdateHUD();
     }
 
@@ -42,14 +50,6 @@ public class HealthSystem : MonoBehaviour
                 StartCoroutine(Vignette());
                 healthBar.fillAmount = currentHealth / maxHealth;
                 break;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("BulletFromEnemy"))
-        {
-            GetDamage(10);
         }
     }
 
