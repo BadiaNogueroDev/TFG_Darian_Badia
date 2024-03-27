@@ -15,7 +15,7 @@ namespace SniperDemo
             for (int i = 0; i < childrenCount; i++)
             {
                 var child = objName.transform.GetChild(i);
-                if (child.name.Contains("Second Grab Point"))
+                if (child.name.Contains("---Second Grab Point1---"))
                 {
                     child.gameObject.SetActive(false);
                 }

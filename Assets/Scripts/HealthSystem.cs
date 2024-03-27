@@ -8,7 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HealthSystem : MonoBehaviour
 {
     public Image healthBar;
-    //FALTA EL TEMA VIGNETTE
+    public TunnelingVignetteController vignette;
+    public LocomotionVignetteProvider locomotionVignetteProvider = new LocomotionVignetteProvider();
     
     [SerializeField] private float vignetteAperture;
     [SerializeField] private float vignetteTransitionTime;
@@ -18,7 +19,8 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        Revive();
+        currentHealth = maxHealth;
+        vignette.locomotionVignetteProviders.Add(locomotionVignetteProvider);
     }
 
     public void GetDamage(float damage)
@@ -33,7 +35,7 @@ public class HealthSystem : MonoBehaviour
     public void Revive()
     {
         currentHealth = maxHealth;
-        UpdateHUD();
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     public void UpdateHUD()
@@ -55,23 +57,8 @@ public class HealthSystem : MonoBehaviour
 
     IEnumerator Vignette()
     {
-        VignetteParameters param = new VignetteParameters();
-        float timer = 0;
-        
-        while (timer < vignetteTransitionTime)
-        {
-            param.apertureSize = Mathf.Lerp(0, vignetteAperture, timer / vignetteTransitionTime);
-            timer += Time.deltaTime;
-        }
-        
-        timer = 0;
-        
-        while (timer < vignetteTransitionTime)
-        {
-            param.apertureSize = Mathf.Lerp(vignetteAperture, 0, timer / vignetteTransitionTime);
-            timer += Time.deltaTime;
-        }
-        
-        yield return null;
+        vignette.BeginTunnelingVignette(locomotionVignetteProvider);
+        yield return new WaitForSeconds(0.3f);
+        vignette.EndTunnelingVignette(locomotionVignetteProvider);
     }
 }
