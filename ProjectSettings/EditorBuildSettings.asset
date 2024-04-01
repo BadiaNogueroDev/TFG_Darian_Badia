@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TwoHandedWeaponXRToolkit2.0/SniperMesh&Scope/DemoSceneSniper.unity
+    guid: 6a36a70a5db8ff44e9ef9abc614f20a9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9998545c2eb314e45be1f55fd9360682, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 3d5af18229b316341acf174af8ff82ed, type: 2}
