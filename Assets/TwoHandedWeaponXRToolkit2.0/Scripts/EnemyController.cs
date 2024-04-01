@@ -36,12 +36,16 @@ namespace SniperDemo
                 navMeshAgent.SetDestination(player.transform.position);
             }
             
-            if(playerDistance <= playerDistanceToShoot && !playerInRange)
+            if(playerDistance <= playerDistanceToShoot)
             {
-                playerInRange = true;
-                navMeshAgent.isStopped = true;
                 transform.LookAt(player.transform);
-                animator.SetTrigger("Stop");
+
+                if (!playerInRange)
+                {
+                    playerInRange = true;
+                    navMeshAgent.isStopped = true;
+                    animator.SetTrigger("Stop");
+                }
             }
         }
 
@@ -54,7 +58,8 @@ namespace SniperDemo
         public void Die()
         {
             Manager.instance.data.EnemiesKilled++;
-            
+            Collider collider = GetComponent<Collider>();
+            collider.enabled = false;
             dead = true;
             navMeshAgent.isStopped = true;
             animator.SetTrigger("Death");

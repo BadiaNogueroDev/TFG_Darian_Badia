@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -8,9 +9,10 @@ public class HUD_Selection : MonoBehaviour
     //TO DO
     public enum TYPE
     {
-        Spatial_With_Change,
-        Spatial_Without_Changed,
-        Shader_Change,
+        Spatial_One,
+        Shader_One,
+        Spatial_Two,
+        Shader_Two,
     }
     
     public TYPE HUDType;

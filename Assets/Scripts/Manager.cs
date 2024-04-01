@@ -20,6 +20,8 @@ public class Manager : MonoBehaviour
     public int selectedSubgroup = 0;
 
     private string DataFileName = "";
+
+    public GameObject finalPanel;
     
     public static Manager instance { get; private set; }
 
@@ -32,6 +34,8 @@ public class Manager : MonoBehaviour
         hudAmmo = GetComponent<HUD_Ammo>();
         hudAim = GetComponent<HUD_Aim>();
         hudSelection = GetComponent<HUD_Selection>();
+        
+        finalPanel.SetActive(false);
     }
 
     private void Start()
@@ -95,8 +99,14 @@ public class Manager : MonoBehaviour
         yield return new WaitForSeconds(120);
         string HUD_Version = selectedGroup.ToString() + "." + selectedSubgroup.ToString();
         WriteCSV(HUD_Version);
+        finalPanel.SetActive(true);
         Time.timeScale = 0;
         yield return null;
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 
     public void WriteCSV(string version)

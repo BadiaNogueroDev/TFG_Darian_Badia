@@ -4,7 +4,7 @@ namespace SniperDemo
 {
     public class Projectile : MonoBehaviour
     {
-        private int playerForce = 100;
+        private int playerForce = 50;
         private int enemyForce = 15;
         private float lifetime = 3;
         

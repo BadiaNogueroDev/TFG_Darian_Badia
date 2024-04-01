@@ -13,7 +13,7 @@ namespace SniperDemo
         
         void Start()
         {
-            InvokeRepeating("SpawnEnemy", 1.0f, 1.0f);
+            InvokeRepeating("SpawnEnemy", 1.4f, 1.4f);
         }
 
         void SpawnEnemy()

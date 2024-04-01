@@ -15,6 +15,7 @@ public class HUD_Health : MonoBehaviour
     public TYPE HUDType;
     [SerializeField]private TMP_Dropdown hudSelection;
 
+    public GameObject button;
     public GameObject watch;
     public GameObject vignette;
     
@@ -30,18 +31,20 @@ public class HUD_Health : MonoBehaviour
     public void SetType()
     {
         HUDType = (TYPE)hudSelection.value;
-        HUDType = (TYPE)hudSelection.value;
         switch (HUDType)
         {
             case TYPE.Meta:
+                button.SetActive(false);
                 watch.SetActive(false);
                 vignette.SetActive(true);
                 break;
             case TYPE.Diegetic:
+                button.SetActive(true);
                 watch.SetActive(true);
                 vignette.SetActive(false);
                 break;
             case TYPE.Diegetic_Meta:
+                button.SetActive(true);
                 watch.SetActive(true);
                 vignette.SetActive(true);
                 break;

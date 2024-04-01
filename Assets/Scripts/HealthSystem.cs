@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
     public Image healthBar;
     public TunnelingVignetteController vignette;
     public LocomotionVignetteProvider locomotionVignetteProvider = new LocomotionVignetteProvider();
-    
+    [SerializeField] private AudioSource breathAudio;
     [SerializeField] private float vignetteAperture;
     [SerializeField] private float vignetteTransitionTime;
     
@@ -28,7 +28,15 @@ public class HealthSystem : MonoBehaviour
         Manager.instance.data.HitsReceived++;
         
         currentHealth -= damage;
+        //if (currentHealth <= 35 && currentHealth >= 25) breathAudio.Play();
         if (currentHealth <= 0) Manager.instance.ResetGame();
+        UpdateHUD();
+    }
+
+    public void Heal(float heal)
+    {
+        currentHealth += heal;
+        if (currentHealth >= maxHealth) currentHealth = maxHealth;
         UpdateHUD();
     }
 
