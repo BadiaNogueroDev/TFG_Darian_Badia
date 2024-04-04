@@ -9,7 +9,7 @@ public class SniperRecover : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Sniper"))
+        if (other.CompareTag("Sniper") || other.CompareTag("Magazine"))
         {
             other.transform.position = spawnPosition.position;
             other.transform.rotation = spawnPosition.rotation;

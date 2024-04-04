@@ -9,6 +9,7 @@ TagManager:
   - BulletFromEnemy
   - Sniper
   - Hand
+  - Magazine
   layers:
   - Default
   - TransparentFX

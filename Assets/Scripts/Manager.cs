@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using SniperDemo;
 using UnityEngine;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Manager : MonoBehaviour
 {
@@ -22,6 +25,11 @@ public class Manager : MonoBehaviour
     private string DataFileName = "";
 
     public GameObject finalPanel;
+
+    public TMP_Text timerText;
+    public float totalTimer;
+    private float timer;
+    private bool playing;
     
     public static Manager instance { get; private set; }
 
@@ -44,7 +52,22 @@ public class Manager : MonoBehaviour
         hudAmmo.SetDefaultParameters();
         hudAim.SetDefaultParameters();
         hudSelection.SetDefaultParameters();
+        timer = totalTimer;
         Time.timeScale = 0;
+    }
+
+    private void Update()
+    {
+        if (playing)
+        {
+            timer -= Time.deltaTime;
+            timerText.text = "Time: " + timer.ToString("F1");
+            
+            if (timer <= 0.0f)
+            {
+                playing = false;
+            }
+        }
     }
 
     public void ResetGame()
@@ -60,13 +83,14 @@ public class Manager : MonoBehaviour
 
     public void StartPlaytest()
     {
-        DataFileName = Application.dataPath + $"/Data from {playtesterName.text}.csv";
+        
         hudHealth.SetType();
         hudAmmo.SetType();
         hudAim.SetType();
         hudSelection.SetType();
         SetTestSubgroup();
         StartCoroutine(FinishPlaytest());
+        DataFileName = Application.dataPath + $"/Data/Data from {playtesterName.text} {selectedGroup}-{selectedSubgroup}.csv";
         Time.timeScale = 1;
     }
 
@@ -96,7 +120,8 @@ public class Manager : MonoBehaviour
 
     IEnumerator FinishPlaytest()
     {
-        yield return new WaitForSeconds(120);
+        playing = true;
+        yield return new WaitForSeconds(totalTimer);
         string HUD_Version = selectedGroup.ToString() + "." + selectedSubgroup.ToString();
         WriteCSV(HUD_Version);
         finalPanel.SetActive(true);
@@ -104,7 +129,11 @@ public class Manager : MonoBehaviour
         yield return null;
     }
 
-    public void CloseGame()
+    public void RestartPlaytest()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void ClosePlaytest()
     {
         Application.Quit();
     }

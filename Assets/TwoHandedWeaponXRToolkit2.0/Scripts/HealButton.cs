@@ -36,7 +36,7 @@ public class HealButton : MonoBehaviour
         canBePressed = false;
         anim.SetTrigger("Press");
         mesh.material.color = canNotBePressedColor;
-        Manager.instance.playerHealth.Heal(20);
+        Manager.instance.playerHealth.Heal(10);
     }
 
     private void OnTriggerEnter(Collider other)
