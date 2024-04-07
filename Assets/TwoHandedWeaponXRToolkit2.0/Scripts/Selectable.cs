@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Selectable : MonoBehaviour
 {
     public List<MeshRenderer> renderers = new List<MeshRenderer>();
+    public Material unselectedMaterial;
+    public Material selectedMaterial;
     public GameObject canvas;
     
     private void Start()
@@ -34,7 +36,7 @@ public class Selectable : MonoBehaviour
         {
             for (int i = 0; i < renderers.Count; i++)
             {
-                renderers[i].material.EnableKeyword("_EMISSION");
+                renderers[i].material = selectedMaterial;
             }
         }
     }
@@ -45,7 +47,7 @@ public class Selectable : MonoBehaviour
         {
             for (int i = 0; i < renderers.Count; i++)
             {
-                renderers[i].material.DisableKeyword("_EMISSION");
+                renderers[i].material = unselectedMaterial;
             }
         }
     }

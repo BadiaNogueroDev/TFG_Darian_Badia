@@ -37,7 +37,7 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth += heal;
         if (currentHealth >= maxHealth) currentHealth = maxHealth;
-        UpdateHUD();
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     public void Revive()
