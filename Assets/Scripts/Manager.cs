@@ -21,15 +21,13 @@ public class Manager : MonoBehaviour
     
     public int selectedGroup = 0;
     public int selectedSubgroup = 0;
-
-    private string DataFileName = "";
-
-    public GameObject finalPanel;
-
-    public TMP_Text timerText;
     public float totalTimer;
     private float timer;
     private bool playing;
+
+    private string DataFileName = "";
+    public GameObject finalPanel;
+    public TMP_Text timerText;
     
     public static Manager instance { get; private set; }
 
@@ -42,7 +40,6 @@ public class Manager : MonoBehaviour
         hudAmmo = GetComponent<HUD_Ammo>();
         hudAim = GetComponent<HUD_Aim>();
         hudSelection = GetComponent<HUD_Selection>();
-        
         finalPanel.SetActive(false);
     }
 
@@ -83,7 +80,6 @@ public class Manager : MonoBehaviour
 
     public void StartPlaytest()
     {
-        
         hudHealth.SetType();
         hudAmmo.SetType();
         hudAim.SetType();
