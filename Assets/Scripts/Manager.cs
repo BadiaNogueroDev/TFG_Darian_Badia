@@ -86,7 +86,7 @@ public class Manager : MonoBehaviour
         hudSelection.SetType();
         SetTestSubgroup();
         StartCoroutine(FinishPlaytest());
-        DataFileName = Application.dataPath + $"/Data/Data from {playtesterName.text} {selectedGroup}-{selectedSubgroup}.csv";
+        DataFileName = Application.dataPath + $"/Data from {playtesterName.text} {selectedGroup}-{selectedSubgroup}.csv";
         Time.timeScale = 1;
     }
 
